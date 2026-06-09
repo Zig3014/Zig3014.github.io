@@ -23,6 +23,46 @@
             <h2>2026年6月</h2>
             <a href="../diary.html">日記にもどる</a>
             <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
+                <h3>6月8日</h3>
+                <p>　\(X\) をバナッハ空間，\(\|\cdot\|\) をその内積，\(T>0\) とする．<br>
+                    　\(\mathbf{s}\colon [0,T]\to X\) が単関数であるとは，\(u_1,\ldots,u_m\in X\) と\([0,T]\) 上の（ルベーグ）可測集合族 \(E_1,\ldots,E_m\subset[0,T]\) が存在して
+                    $$ \mathbf{s}=\sum_{i=1}^m\chi_{E_i}u_i $$
+                    となることを言う．単関数に対し，その積分を
+                    $$ \int_0^T\sum_{i=1}^m\chi_{E_i}u_i(t)dt=\sum_{i=1}^m|E_i|u_i $$
+                    で定める．積分の値は \(X\) の元になる．一般の関数 \(u\colon[0,T]\to X\) の積分は，単関数列 \(\{\mathbf{s}_i\}\) が存在して
+                    $$ \int_0^T\|\mathbf{u}(t)-\mathbf{s}_i(t)\|_Xdx\to0\quad\text{as}\ i\to\infty $$
+                    となるとき，
+                    $$ \int_0^T\mathbf{u}_i(t)dt=\lim_{m\to\infty}\int_0^T\mathbf{s}_i(t)dt $$
+                    で定める．このとき，\(\mathbf{u}\) はボホナー可積分であるという．
+                    $$ \int_0^T\|\mathbf{s}-\tilde{\mathbf{s}}\|_Xdt\leq\int_0^T\|\mathbf{s}-\mathbf{u}\|_Xdt+\int_0^T\|\mathbf{u}-\tilde{\mathbf{s}}\|_Xdt $$
+                    であるから，この極限は単関数列の取り方によらない．単関数の表示によらないことは，通常のルベーグ積分と同様に示せる．<br>
+                    　ボホナー積分は通常の定義域を実数から一般のバナッハ空間に拡張したものであり，類似の性質が多く成り立つ．その確認として，優収束定理の類似が成り立つことを確認しよう．<br>
+                    　関数列 \(\mathbf{u}_m\colon[0,T]\to X\) と関数 \(\mathbf{u}\colon[0,T]\to X\) が，
+                    $$ \lim_{m\to\infty}\|\mathbf{u}_m(t)-\mathbf{u}(t)\|_X=0\quad\mathrm{a.e.}\ t\in[0,T] $$
+                    を満たしており，さらに実数値関数 \(f\in L^1([0,T])\) が存在して，任意の \(m\) についてほとんど至る所 \(\|\mathbf{u}_m(t)\|_X\leq f(t)\) が成り立っているとする．このとき，
+                    $$ \lim_{m\to\infty}\int_0^T\mathbf{u}_m(t)dt=\int_0^T\mathbf{u}(t)dt $$
+                    が成り立つ（優収束定理）．<br>
+                    　まず，
+                    $$ \lim_{m\to\infty}\left\|\int_0^T\mathbf{u}_m(t)dt-\int_0^T\mathbf{u}(t)dt\right\|_X\leq\int_0^T\|\mathbf{u}_m(t)-\mathbf{u}(t)\|_Xdt $$
+                    である．ボホナー積分に関しても三角不等式が成り立つことは，単関数による積分の定義と，ノルムと極限操作が交換できることから従う．ここで実数値関数 \(g_m(t)=\|\mathbf{u}_n(t)-\mathbf{u}(t)\|_X\) は，ほとんど至る所 \(g_m(t)\to0\) であり，\(|g_n(t)|\leq\|\mathbf{u}_m\|_X+\|\mathbf{u}\|_X\leq 2f(t)\) なので優関数を持つ．したがって実数値関数に関する優収束定理より
+                    $$ \lim_{m\to\infty}\int_0^Tg_m(t)dt=\int_0^T0dt=0 $$
+                    が成り立つ．以上からボホナー積分における優収束定理が示された．<br>
+                    　ボホナー積分に関する証明では，実数値関数に帰着させて議論を進めることがままある．もう一つ例として，微積分学の基本定理を証明する．<br>
+                    　\(\mathbf{u},\mathbf{v}\colon[0,T]\to X\) とする．\(\mathbf{v}\) が \(\mathbf{u}\) の微分であるとは，
+                    $$ \lim_{h\to 0}\left\|\frac{\mathbf{u}(t+h)-\mathbf{u}(t)}{h}-\mathbf{v}(t)\right\|_X=0 $$
+                    が任意の \(t\in[0,T]\) で成り立つことを言う．このとき，\(\mathbf{v}=\mathbf{u}'\) とかく．<br>
+                    　\(\mathbf{u}\colon[0,T]\to X\) が微分可能であり，かつ \(\mathbf{u}'\) がボホナー可積分ならば，\(a,b\in[0,T]\) に対し
+                    $$ \mathbf{u}(b)-\mathbf{u}(a)=\int_a^b\mathbf{u}'(t)dt $$
+                    が成り立つ．<br>
+                    　\(v\in X^*\) を固定する．実数値関数 \(f\colon[0,T]\to\mathbb{R}\) を \(f(t)=\langle v,\mathbf{u}(t)\rangle\) で定める．\(v\) は連続であるから，極限とペアリングの交換ができて \(f'(t)=\langle v,\mathbf{u}'(t)\rangle\) である．\(\mathbf{u}'\) が可積分であることから \(f'\) は有界なので，実数値関数に関する微分積分学の基本定理より
+                    $$ f(b)-f(a)=\int_a^bf'(t)dt \quad\therefore \left\langle v,\mathbf{u}(b)-\mathbf{u}(a)-\int_a^b\mathbf{u}'(t)dt\right\rangle=0$$
+                    となる．\(v\) は任意であったから，ハーンバナッハの系より \(x\in X^*\) であって
+                    $$\left\langle x,\mathbf{u}(b)-\mathbf{u}(a)-\int_a^b\mathbf{u}'(t)dt\right\rangle=\left\|\mathbf{u}(b)-\mathbf{u}(a)-\int_a^b\mathbf{u}'(t)dt\right\|_X^2 $$
+                    なるものが取れるので，\(\mathbf{u}(b)-\mathbf{u}(a)=\int_a^b\mathbf{u}'(t)dt\) となり，ボホナー積分における微分積分学の基本定理が示された．<br>
+                    　「PDE」の5章9節2項を読むのに必要なボホナー積分に関する知識はこんなものだろう．あとはセミナーでどれだけ詳細に話すかということだけが問題だが，これはまだ迷っている．実際に話して練習してみないとわからないことだろう．
+                </p>
+            </article>
+            <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
                 <h3>6月7日</h3>
                 <p>　昨日述べた変換の問題について，同期から<a href="https://note.com/math_unnatural/n/n64604bdda0f3">こちらのnote</a>を紹介してもらった．Google日本語入力はmacデフォルトの変換とは異なる挙動が見られるが，大したものではないので1週間もすれば慣れるだろう．<br>
                     　ボホナー積分について少しわかった．例えばバナッハ空間 \(X\) に値を取る関数列 \(\mathbf{u}_m\) が \(\mathbf{u}\) に各点で収束するとは \(\|\mathbf{u}_m(t)-\mathbf{u}(t)\|_X\to0\) となることだが，これは \(X\) に（ノルムから定まる）距離で定めた位相について収束しているということである．通常の各点収束とは \(\mathbb{R}^n\) の（ユークリッド）距離に関する位相で収束しているということだから，これの類似と見ることができる．<br>
