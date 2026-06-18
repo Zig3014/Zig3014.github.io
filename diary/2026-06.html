@@ -8,16 +8,24 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <header>
-        <h1>R. Oizumiのホームページ</h1>
-        <nav id="navLink"></nav>
-    </header>
+    <nav id="navLink"></nav>
     <main>
         <section>
             <a href="../diary.html">過去の日記一覧</a>
             <h2>2026年6月</h2>
             <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
-                <h3>6月16日</h3>
+                <h3>6月18日</h3>
+                <p>　昨日の問題は東京大学理科一類と理科二類の合格最低点の差を表しているので，答えは \(\mathbf{-1.6100}\) である．今年は12年ぶりに最低点が逆転し，話題になったので題材にした．2024年まで \(\frac{1}{90}\) 刻みの値になっていること，2025年から \(\frac{1}{100}\) 刻みになっていることが大きなヒントだが，数値を直接検索しても情報が得られないということで思ったよりも難しかったかもしれない．<br>
+                    　\(\mathbb{R}\) 上の関数であって，すべての有理数で不連続かつすべての無理数で連続である関数はトマエ関数
+                    $$ f_{Thomae}(x)=\begin{cases} 1/p & x=q/p\ (\text{いい感じにする})\\ 1 & x=0 \\ 0 & \mathbb{R}\setminus\mathbb{Q} \end{cases} $$
+                    が有名だが，これよりも有理数を \(\mathbb{Q}=\{q_i\}\) のように整列させて
+                    $$ f(x)=\sum_{i=1}^\infty \frac{1}{2^i}\chi_{\{x\geq q_i\}}(x) $$
+                    とするアイデアのほうがが簡単だし，汎用性が高いのではないかとH26のB-10を解いて思った．面白い<a href="https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%9E%E3%82%A8%E9%96%A2%E6%95%B0">Fact</a>として，\(A\subset\mathbb{R}\) が \(F_\sigma\) 集合であることと，ある \(\mathbb{R}\) 上の関数 \(f\) が存在して \(f\) の不連続点全体からなる集合が \(A\) になることは同値である．<br>
+                    　フッターを整備した．誤字などを指摘するためのフォームを作りたいとGeminiに相談したところ，GitHub Pages は静的なので外部に依存しなければそのようなものは作れないと言われた．そのため，GitHub Issuesのリンクをフッターにつけた．
+                </p>
+            </article>
+            <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
+                <h3>6月17日</h3>
                 <p>　数学科筋トレ部（非公式）のホームページに \(\LaTeX\) タイピングが追加された．どういうこと？<br>
                     　講究XBで作用素環の話があった．解析の話はそこそこ聞けたが，代数パートはダメだった．我ながらわかりやすいと思う．一度代数に抱いた苦手意識が悪いサイクルを生み出している．<br>
                     　昨日講究XBの会場が狭いのが嫌だと書いたが，今日はまた会場が変わるのだということを忘れていた．更に悪い教室になった．トイレが遠すぎる．<br>
@@ -205,9 +213,7 @@
             <a href="../diary.html">過去の日記一覧</a>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2026 R. Oizumi</p>
-    </footer>
 <script src="../navLink.js"></script>
+<script src="../footer.js"></script>
 </body>
 </html>
