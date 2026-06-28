@@ -5,6 +5,7 @@ body {
     padding: 0;
     background-color: #f4f5f7; /* 背景を薄いグレーに */
     color: #333;
+    counter-reset: theorem-counter;
 }
 
 /* コンテンツを中央に寄せ、幅を制限する（これがレイアウトの肝です） */
@@ -44,4 +45,44 @@ footer {
     margin-top: 40px;
     font-size: 0.9em;
     color: #777;
+}
+
+/* 定理環境の基本スタイル（共通） */
+.theorem {
+  margin: 1.5em 0;
+  padding: 15px;
+  background-color: #f9f9f9; 
+  border-left: 5px solid #0056b3;
+}
+
+/* ===== 番号【あり】の定理（通常） ===== */
+/* unnumberedクラスが「ない」場合のみカウンターを回す */
+.theorem:not(.unnumbered) {
+  counter-increment: theorem-counter;
+}
+
+/* 通常のタイトル */
+.theorem:not(.unnumbered)::before {
+  content: "定理 " counter(theorem-counter) ". ";
+  font-weight: bold;
+}
+
+/* data-title属性（カスタムタイトル）がある場合 */
+.theorem[data-title]:not(.unnumbered)::before {
+  content: "定理 " counter(theorem-counter) " (" attr(data-title) "). ";
+  font-weight: bold;
+}
+
+
+/* ===== 番号【なし】の定理 ===== */
+/* 番号なしの通常のタイトル */
+.theorem.unnumbered::before {
+  content: "定理. ";
+  font-weight: bold;
+}
+
+/* 番号なしで、かつdata-title属性がある場合 */
+.theorem.unnumbered[data-title]::before {
+  content: "定理 (" attr(data-title) "). ";
+  font-weight: bold;
 }
