@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年7月 | R. Oizumiのホームページ</title>
+    <link rel="stylesheet" href="../style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <nav id="navLink"></nav>
+    <main>
+        <section>
+            <a href="../diary.html">過去の日記一覧</a>
+            <h2>2026年7月</h2>
+            <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
+                <h3>7月1日</h3>
+                <p>　7月になった．気温がとても高いと言うわけではないが，湿度が高いため服がベタついて不快だ．汗を吸った服を着ていると中高の頃を思い出す．私は6年間自転車通学をしていて（母校は基本高等部生しか自転車を用いることが許されていなかったが，私は家の立地の関係で特別に申請を出し，自転車の使用が条件付きで許可されていた），夏の日はよく汗をかき，特に背中に背負った鞄がびしょびしょになるあの感覚をよく覚えている．当然嫌いな感覚だったのだが，今となっては輝かしい中高時代を思い出せると言うことでそれすらも愛おしく思える．<br>
+                    　Harnack の不等式を示した．といっても，解析学Ⅴの内容ではある．領域 \(\Omega\subset\mathbb{R}\) と \(\Omega'\subset\subset\Omega\) に対し，定数 \(C=C(n,\Omega,\Omega')\) が存在して，任意の \(\Omega\) 上の非負値調和関数 \(u\) について
+                    $$ \sup_{\Omega'}u\leq C\inf_{\Omega'}u $$
+                    が成り立つ．証明の概略を述べる．\(y\in\Omega',R>0\) を \(B(y,4r)\subset\Omega\) となるように取ると，\(x_1,x_2\in B(y,r)\) について
+                    $$ u(x_1)=\frac{1}{B(y,r)}\int_{B(y,r)}u(t)dt\leq\frac{1}{B(y,r)}\int_{B(y,2r)}u(t)dt$$
+                    $$ u(x_2)=\frac{1}{B(y,3r)}\int_{B(y,3r)}u(t)dt\geq\frac{1}{B(y,3r)}\int_{B(y,2r)}u(t)dt$$
+                    が成り立つので，\(\Omega'\) 内を球で満たしてやれば \(\Omega\) 内の任意の2点の値が定数倍で比較できる．<br>
+                    　これについて，G-Tは2点を曲線で結びそれを球で被覆するのだが，\(u\) によって \(\sup,\inf\) を取る点が変わり，それ次第で曲線が変わるので被覆に必要な球の数が曲線によらず一様に抑えられることを示さなければならない．しかしG-Tにはそんなことは書いていない．一方で，Evans は領域全体を有限個の球で覆うことでこの問題を回避している．<br>
+                    　この際，なるべく少ない数の球で領域を満たした方が定数 \(C\) を小さくできる．曖昧な言い方だが，領域が丸い方が尖っていたり細長かったりする領域よりも被覆に必要な球の数が少ない．聞いた話によると，必要な球の個数を精密に見積もることに心血を注ぐ数学者もいるようだ．
+                </p>
+            </article>
+        </section>
+        <section>
+            <a href="../diary.html">過去の日記一覧</a>
+        </section>
+    </main>
+<script src="../navLink.js"></script>
+<script src="../footer.js"></script>
+</body>
+</html>
