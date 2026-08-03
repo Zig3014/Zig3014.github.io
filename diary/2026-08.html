@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年8月 | R. Oizumiのホームページ</title>
+    <link rel="stylesheet" href="../style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <nav id="navLink"></nav>
+    <main>
+        <section>
+            <a href="../diary.html">過去の日記一覧</a>
+            <h2>2026年8月</h2>
+            
+            <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
+                <h3>8月3日</h3>
+                <p>　コンパクト台を持つ関数のフーリエ変換の可積分性について同期に問われたので，調べて出てきたことを書く．<div class="theorem unnumbered" data-title="ベルンシュタイン">
+                    　\(\alpha\gt1/2\) のとき，コンパクト台を持つ\(\alpha\) 次ヘルダー連続関数のフーリエ変換は 可積分である．
+                    </div>
+                    　\(f(x+h)-f(x)\) のフーリエ変換は \(\widehat{f}(\xi)|e^{2\pi ih\xi}-1|\) である．プランシュレルの定理より
+                    $$ \int_\mathbb{R}|\widehat{f}(\xi)|^2|e^{2\pi ih\xi}-1|^2d\xi=\int_\mathbb{R}|f(x+h)-f(x)|^2dx$$
+                    である．ここでヘルダー条件から \(|f(x+h)-f(x)|^2\leq Ch^{2\alpha}\) が成り立つので，
+                    $$ \int_\mathbb{R}|\widehat{f}(\xi)|^2\sin^2(\pi\xi h)d\xi\leq (|\mathrm{supp} f|+|h|)C^2h^{2\alpha}\leq Ch^{2\alpha}$$
+                    となる．これを用いて \(\int_\mathbb{R}|\widehat{f}(\xi)|d\xi\) を評価しよう．領域 \(2^{n}\leq \xi\leq 2^{n+1}\) において，\(h=2^{-n-2}\) とすると \(\pi/4\leq\pi\xi h\lt3\pi/4\) であるから \(\sin^2(\pi\xi h)\geq1/2\) となり，
+                    $$\begin{align*}\int_{\{2^{n}\leq \xi\leq 2^{n+1}\}}|\widehat{f}(\xi)|^2d\xi&\leq2\int_{\{2^{n}\leq \xi\leq 2^{n+1}\}}|\widehat{f}(\xi)|^2\sin^2(\pi\xi h)d\xi\\
+                    &\leq C\int_\mathbb{R}|\widehat{f}(\xi)|^2\sin^2(\pi\xi h)d\xi\\
+                    &\leq Ch^{2\alpha}\leq C2^{-2n\alpha}
+                    \end{align*}$$を得る．ヘルダーの不等式より
+                    $$\int_{\{2^{n}\leq \xi\leq 2^{n+1}\}}|\widehat{f}(\xi)|d\xi\leq(2^{n+1})^{1/2}\left(\int_{\{2^{n}\leq \xi\leq 2^{n+1}\}}|\widehat{f}(\xi)|^2d\xi\right)^{1/2}\leq C2^{n(1/2-\alpha)}$$
+                    が得られる．\(\xi=0\) の付近については，\(f\) がコンパクト台を持つことから \(\widehat{f}\) が連続になるので可積分性については問題がない．よって \(\alpha\gt1/2\) のとき \(\widehat{f}\) は可積分である．（証明終了）<br><br>
+                    　逆に，\(\alpha=1/2\) ではフーリエ変換が可積分にならない例が存在する．<div class="theorem unnumbered">
+                    　\(f(x)=\begin{cases}\sqrt{|x|}\sin(1/x) & (|x|\leq1/\pi)\\ 0 & (|x|\geq1/\pi)\end{cases}\) のフーリエ変換は可積分でない．
+                    </div>
+                    　まず \(\int_{-1/\pi}^{1/\pi}e^{i(x^{-1}-x\xi)}dx\) を考える．\(R=[-1/\pi,1/\pi],\Phi(x)=(x\xi)^{-1}-x\) とする．\(\Phi'(x)\neq0\) となる場合，
+                    $$\begin{align*}\int_{R}e^{i\xi\Phi(x)}dx&=\int_{R}(\Phi'(x)\xi)^{-1}\left(\Phi'(x)\xi e^{i\xi\Phi(x)}\right)dx\\
+                    &=[(\Phi'(x)\xi)^{-1}e^{i\xi\Phi(x)}]_{-1/\pi}^{1/\pi}+\frac{1}{\xi}\int_R\frac{\Phi''(x)}{\Phi'(x)^2}e^{i\xi\Phi(x)}dx
+                    \end{align*}$$
+                    であるので，\(\int_{R}e^{i\xi\Phi(x)}dx=O(\xi^{-1})\) である．\(\Phi'(x)=0\) となるのは \(x=x_\xi=1/\sqrt{-\xi}\) のとき．この点周りでの積分の評価は，\(\Phi'(x)\) のテイラー展開を考えると
+                    $$ \int_{x_\xi-\varepsilon}^{x_\xi+\varepsilon}e^{i\xi\Phi(x)}dx\approx e^{i\xi\Phi(x_\xi)}\int_{-\varepsilon}^{\varepsilon}e^{i\xi\Phi''(x_\xi)x^2/2}dx\approx e^{i\xi\Phi(x_\xi)}\int_{-\infty}^{\infty}e^{i\xi\Phi''(x_\xi)x^2/2}dx=e^{i\xi\Phi(x_0)}\sqrt{\frac{2\pi i}{\xi|\Phi''(x_\xi)|}}$$
+                    となるから，\(\Phi''(x_\xi)=O(\xi^{3/2})\) に注意すると \(\int_Re^{i(x^{-1}-x\xi)}dx=O(\xi^{-3/4})\) を得られる．<br>
+                    　\(f(x)\) のフーリエ変換に戻ろう．
+                    $$ \widehat{f}(\xi)=\int_R \sqrt{|x|}\frac{e^{ix^{-1}-ix\xi}-e^{-ix^{-1}-ix\xi}}{2i}dx $$
+                    であり，この積分は先程の考察より \(\xi\gt0\) のとき \(e^{-ix^{-1}-ix\xi}\) が \(x=1/\sqrt{\xi}\) に，\(\xi\lt0\) のとき \(e^{ix^{-1}-ix\xi}\) が \(x=1/\sqrt{\xi}\) に停留点（\(\Phi'(x)=0\)となる点）を持つ．いずれの場合も停留点付近で \(\sqrt{|x|}=O(\xi^{-1/4})\) であるから，
+                    $$ \widehat{f}(\xi)=O(\xi^{-1})\quad (|\xi|\to\infty) $$
+                    であり，\(\widehat{f}\) は可積分でない．（証明終了）<br><br>
+                    　\(O\) 記号は上からの評価に使うものなのでここでは \(\Theta\) か \(\Omega\) が適切だが，誤用の方が馴染みがあるのであえてそちらを用いた．停留点周りの評価が上からの評価であり少し緩いので心配になるが問題ない．<br>
+                    　解析学Ⅷの内容を全く覚えていないが，こんな感じの議論をした気がするぞ．振動する関数のフーリエ変換の減衰を考えようとすると自然に \(e^{i\Phi}\) のような関数の積分を評価したくなるのか．
+                </p>
+            </article>
+            <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
+                <h3>8月2日</h3>
+                <p>　休日に学部生室に行ったとき，向かいの院生室に明かりがついていると少し嬉しくなる（大体の場合ついている）．
+                </p>
+            </article>
+            <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
+                <h3>8月1日</h3>
+                <p>　<a href="https://www.nicovideo.jp/watch/sm18043514">超人高校生＋おまけのやりたい放題クトゥルフ</a>を見返していた．クトゥルフTRPGにハマっていた小学校高学年のときに見た作品．どうにか完結してほしいが…<br>
+                    　TRPGは好きで，中学生くらいのときは人に恵まれたのもあって結構プレイしていた．部活中にTRPGをやっていたらありえないぐらい叱られて反省文を書いたこともある．今は機会もなくなってめっきりやらなくなった．リプレイもそこそこ見るが，ワチャワチャしているのを見るよりかは丁寧に編集されたものを見たほうが好きだ．リプレイ風のものもよく見る．いわゆるTRPG好きとは少し好みが違うと思う．
+                </p>
+            </article>
+        </section>
+        <section>
+            <a href="../diary.html">過去の日記一覧</a>
+        </section>
+    </main>
+<script src="../navLink.js"></script>
+<script src="../footer.js"></script>
+</body>
+</html>
