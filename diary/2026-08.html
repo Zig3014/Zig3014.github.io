@@ -13,7 +13,13 @@
         <section>
             <a href="../diary.html">過去の日記一覧</a>
             <h2>2026年8月</h2>
-            
+            <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
+                <h3>8月4日</h3>
+                <p>　今までに解いた東大数理入試の測度論の問題（関数解析性が強いと思った問題は含まない）をすべて解き直し，要点や使った技法をまとめた．H26-B10が一番容易で，H26-B12が最も難しかった．この年の温度差がすごい．難易度表のようなものを作ろうかと思ったが，それぞれ使うテクニックが異なっており，それらに適切な難易度を割り振るのが難しかったので諦めた．最易，最難も人によって異なるだろう．<br>
+                    　まだまとめきれていないが，完成したらここに載せるかもしれない．<br>
+                    　同じことを関数解析とPDEでもやろうと思っているが，間に合うか？院試だけに絞ってもやらなければならないことはまだまだある．
+                </p>
+            </article>
             <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
                 <h3>8月3日</h3>
                 <p>　コンパクト台を持つ関数のフーリエ変換の可積分性について同期に問われたので，調べて出てきたことを書く．<div class="theorem unnumbered" data-title="ベルンシュタイン">
@@ -23,12 +29,12 @@
                     $$ \int_\mathbb{R}|\widehat{f}(\xi)|^2|e^{2\pi ih\xi}-1|^2d\xi=\int_\mathbb{R}|f(x+h)-f(x)|^2dx$$
                     である．ここでヘルダー条件から \(|f(x+h)-f(x)|^2\leq Ch^{2\alpha}\) が成り立つので，
                     $$ \int_\mathbb{R}|\widehat{f}(\xi)|^2\sin^2(\pi\xi h)d\xi\leq (|\mathrm{supp} f|+|h|)C^2h^{2\alpha}\leq Ch^{2\alpha}$$
-                    となる．これを用いて \(\int_\mathbb{R}|\widehat{f}(\xi)|d\xi\) を評価しよう．領域 \(2^{n}\leq \xi\leq 2^{n+1}\) において，\(h=2^{-n-2}\) とすると \(\pi/4\leq\pi\xi h\lt3\pi/4\) であるから \(\sin^2(\pi\xi h)\geq1/2\) となり，
-                    $$\begin{align*}\int_{\{2^{n}\leq \xi\leq 2^{n+1}\}}|\widehat{f}(\xi)|^2d\xi&\leq2\int_{\{2^{n}\leq \xi\leq 2^{n+1}\}}|\widehat{f}(\xi)|^2\sin^2(\pi\xi h)d\xi\\
+                    となる．これを用いて \(\int_\mathbb{R}|\widehat{f}(\xi)|d\xi\) を評価しよう．領域 \(2^{n}\leq |\xi|\leq 2^{n+1}\) において，\(h=2^{-n-2}\) とすると \(\pi/4\leq\pi\xi h\lt3\pi/4\) であるから \(\sin^2(\pi\xi h)\geq1/2\) となり，
+                    $$\begin{align*}\int_{\{2^{n}\leq |\xi|\leq 2^{n+1}\}}|\widehat{f}(\xi)|^2d\xi&\leq2\int_{\{2^{n}\leq |\xi|\leq 2^{n+1}\}}|\widehat{f}(\xi)|^2\sin^2(\pi\xi h)d\xi\\
                     &\leq C\int_\mathbb{R}|\widehat{f}(\xi)|^2\sin^2(\pi\xi h)d\xi\\
                     &\leq Ch^{2\alpha}\leq C2^{-2n\alpha}
                     \end{align*}$$を得る．ヘルダーの不等式より
-                    $$\int_{\{2^{n}\leq \xi\leq 2^{n+1}\}}|\widehat{f}(\xi)|d\xi\leq(2^{n+1})^{1/2}\left(\int_{\{2^{n}\leq \xi\leq 2^{n+1}\}}|\widehat{f}(\xi)|^2d\xi\right)^{1/2}\leq C2^{n(1/2-\alpha)}$$
+                    $$\int_{\{2^{n}\leq |\xi|\leq 2^{n+1}\}}|\widehat{f}(\xi)|d\xi\leq(2^{n+1})^{1/2}\left(\int_{\{2^{n}\leq |\xi|\leq 2^{n+1}\}}|\widehat{f}(\xi)|^2d\xi\right)^{1/2}\leq C2^{n(1/2-\alpha)}$$
                     が得られる．\(\xi=0\) の付近については，\(f\) がコンパクト台を持つことから \(\widehat{f}\) が連続になるので可積分性については問題がない．よって \(\alpha\gt1/2\) のとき \(\widehat{f}\) は可積分である．（証明終了）<br><br>
                     　逆に，\(\alpha=1/2\) ではフーリエ変換が可積分にならない例が存在する．<div class="theorem unnumbered">
                     　\(f(x)=\begin{cases}\sqrt{|x|}\sin(1/x) & (|x|\leq1/\pi)\\ 0 & (|x|\geq1/\pi)\end{cases}\) のフーリエ変換は可積分でない．
@@ -51,7 +57,7 @@
             </article>
             <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
                 <h3>8月2日</h3>
-                <p>　休日に学部生室に行ったとき，向かいの院生室に明かりがついていると少し嬉しくなる（大体の場合ついている）．
+                <p>　休日に学部生室に行ったとき，向かいの院生室に明かりがついていると少し嬉しくなる（大抵の場合ついている）．
                 </p>
             </article>
             <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
