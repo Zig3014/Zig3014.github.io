@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026年11月 | R. Oizumiのホームページ</title>
+    <link rel="stylesheet" href="../style.css">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <nav id="navLink"></nav>
+    <main>
+        <section>
+            <a href="../diary.html">過去の日記一覧</a>
+            <h2>2026年11月</h2>
+            <article style="border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 20px;">
+                <h3>11月1日</h3>
+                <p>　>>枠順は意味がない．結局ダービー馬が勝つ．<br>
+                    これが言えて何故負ける？宝塚，スプリンターズS，秋華賞，菊花賞，秋天でGⅠ5連敗中．<br>
+                    　近所のスーパーに行ったらかき氷の蜜がたたき売りされていた．賞味期限を見ると2027.5と書いてあり，悲しい気持ちになった．<br>
+                    　G-Tの6.1を読み，Schauder評価を習得した．4.3でラプラシアンに対する類似の評価が得られているので，今節ではそれに帰着させる作業を行った．証明をするにはノルムの気持ちになることが重要である．今回用いたノルムは
+                    $$ [u]_{k,\alpha;\Omega}^{(\sigma)}=\sup_{x,y\in\Omega,x\neq y}\min\{\mathrm{dist}(x,\partial\Omega),\mathrm{dist}(y,\partial\Omega)\}^{k+\sigma+\alpha}\frac{|D^ku(x)-D^ku(y)|}{|x-y|^\alpha}$$
+                    である．要するに境界付近での暴れを多少許容したヘルダーノルム．大事なのは細かい振る舞いではなく，スケーリングとオーダーである．例えば \(x=2t\) のようなスケール変換を行うと \(D^ku\) の大きさは \(2^{-k}\) 倍，\(|x-y|^\alpha\) の部分は \(2^\alpha\) 倍，\(\mathrm{dist}\) のところは \(2^{k+\alpha+\sigma}\) 倍になるので全体で \(2^\sigma\) 倍になる．この気持ちを持っていれば式変形の見通しがつく．
+                </p>
+            </article>
+        </section>
+        <section>
+            <a href="../diary.html">過去の日記一覧</a>
+        </section>
+    </main>
+<script src="../navLink.js"></script>
+<script src="../footer.js"></script>
+</body>
+</html>
